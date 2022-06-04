@@ -1,12 +1,12 @@
-import './App.css';
 import './styles/global.css'
 import Login from './views/Login';
+import UserProvider from './store/userContext'
 
 function App() {
   return (
-    <div className="App">
+    <UserProvider>
       <Login/>
-    </div>
+    </UserProvider>
   );
 }
 

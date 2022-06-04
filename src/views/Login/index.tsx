@@ -1,8 +1,10 @@
-import { useState, ChangeEvent, useMemo, useCallback } from "react";
+import { useState, ChangeEvent, useMemo, useCallback, useContext } from "react";
+import { UserContext } from '../../store/userContext'
 import { InputNameType } from './interface'
 import "./style.css";
 
 function Login() {
+const { setUser } = useContext(UserContext)
   const [values, setValues] = useState({
     fullName: {
       value: '',
@@ -20,8 +22,7 @@ function Login() {
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    console.log(event)
-    console.log("values", values)
+    setUser({ fullName: values.fullName })
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
