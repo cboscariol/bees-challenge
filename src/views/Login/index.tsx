@@ -44,20 +44,22 @@ const { setUser } = useContext(UserContext)
 
   return (
     <div className="login">
-      <div>
-        <p>Please, enter your full name below</p>
-        <p>Only alphabetical characters are accepted</p>
+      <div className="login-wrapper">
+        <div>
+          <p>Please, enter your full name below</p>
+          <p>Only alphabetical characters are accepted</p>
+        </div>
+        <form className="login-form" onSubmit={handleSubmit} method="post">
+          <input className="login-input" type="text" placeholder="Full name" name="fullName" value={values.fullName.value} onChange={handleChange} onBlur={handleBlur} />
+          {getHasError('fullName') && <p className="error">Please, fill this field!</p>}
+          <label htmlFor="age-checkbox">
+            <input type="checkbox" id="age-checkbox" checked={values.majorAge.value} name="majorAge" onChange={handleChange} onBlur={handleBlur}  />
+            Are you older than 18 years old?
+          </label>
+          {getHasError('majorAge') && <p className="error">Please, check this field!</p>}
+          <button type="submit" className="submit-btn-login" disabled={!canSubmit}>Enter</button>
+        </form>
       </div>
-      <form className="login-form" onSubmit={handleSubmit} method="post">
-        <input className="login-input" type="text" placeholder="Full name" name="fullName" value={values.fullName.value} onChange={handleChange} onBlur={handleBlur} />
-        {getHasError('fullName') && 'errou'}
-        <label htmlFor="age-checkbox">
-          <input type="checkbox" id="age-checkbox" checked={values.majorAge.value} name="majorAge" onChange={handleChange} onBlur={handleBlur}  />
-          Are you older than 18 years old?
-        </label>
-        {getHasError('majorAge') && 'errou'}
-        <button type="submit" className="submit-btn-login" disabled={!canSubmit}>Enter</button>
-      </form>
     </div>
   );
 }
