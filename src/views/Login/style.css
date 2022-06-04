@@ -1,0 +1,51 @@
+.login {
+    background-color: var(--primary-yellow);
+    background-image: url('./assests/bee.png');
+    background-repeat: no-repeat;
+    background-position: bottom center;
+    background-size: 150px;
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    font-weight: 400;
+    font-size: 14px;
+    line-height: 150%;
+}
+
+.login-form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-top: 16px;    
+}
+
+#age-checkbox {
+    margin-right: 8px;
+}
+
+.login-input {
+    border: 1px solid #D4D4D8;
+    border-radius: 4px;
+    padding: 10px 12px;
+    margin: 16px 0;
+}
+
+.submit-btn-login {
+    background-color: var(--primary-blue);
+    color: #ffffff;
+    border-radius: 4px;
+    padding: 8px 16px;
+    width: 75px;
+    margin-top: 22px;
+} 
+
+
+@media (min-width: 769px) {
+
+    .login {
+        background-position: bottom left;
+        background-size: 278px;
+    }
+}

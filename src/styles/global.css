@@ -1,0 +1,14 @@
+* {
+    font-family: 'Work Sans', sans-serif;
+    margin: 0;
+    padding: 0;
+    border: 0;
+ }
+  
+ :root {
+    --primary-yellow: #F2EC54;
+    --primary-gray: #27272A;
+    --secondary-gray: #27272A;
+    --primary-white: #E5E5E5;
+    --primary-blue: #5D5FEF
+ } 
