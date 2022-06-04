@@ -1,6 +1,6 @@
 .login {
   background-color: var(--primary-yellow);
-  background-image: url('./assests/bee.png');
+  background-image: url('./assets/bee.png');
   background-repeat: no-repeat;
   background-position: bottom center;
   background-size: 150px;

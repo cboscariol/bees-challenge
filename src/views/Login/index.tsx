@@ -1,10 +1,12 @@
 import { useState, ChangeEvent, useMemo, useCallback, useContext } from "react";
 import { UserContext } from '../../store/userContext'
 import { InputNameType } from './interface'
+import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 function Login() {
-const { setUser } = useContext(UserContext)
+const { setUser } = useContext(UserContext);
+let navigate = useNavigate();
   const [values, setValues] = useState({
     fullName: {
       value: '',
@@ -22,7 +24,8 @@ const { setUser } = useContext(UserContext)
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    setUser({ fullName: values.fullName })
+    setUser({ fullName: values.fullName.value })
+    navigate("../home")
   }
 
   const handleChange = (event: ChangeEvent<HTMLInputElement>) => {
