@@ -4,10 +4,11 @@ import locationIcon from "./assets/locationIcon.svg";
 import phoneIcon from "./assets/phoneIcon.svg";
 import addIcon from "./assets/addIcon.svg";
 import CardLabel from "../CardLabel";
+import { BreweryCardProps } from './interface'
 
 import "./style.css";
 
-function BreweryCard(props: any) {
+function BreweryCard(props: BreweryCardProps) {
   return (
     <div className="brewery-card">
       <button>
@@ -16,7 +17,7 @@ function BreweryCard(props: any) {
       <h1>{props.name}</h1>
       <p>s{props.street}</p>
       <p>
-        {props.city}, {props.state} - {props.country}{" "}
+        {props.city}, {props.state} - {props.country}
       </p>
       <div className="brewery-card-labels">
         <CardLabel title={props.breweryType} icon={dashboardIcon} />

@@ -1,4 +1,3 @@
-import "./style.css";
 import Header from "../../components/Header";
 import Card from "../../components/BreweryCard";
 import { useContext, useEffect, useState } from "react";
@@ -6,13 +5,16 @@ import { UserContext } from "../../store/userContext";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import beerMug from "./assets/beerMug.png";
+import { DataType } from "./interface";
+
 import "react-toastify/dist/ReactToastify.css";
+import "./style.css";
 
 function Home() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   //const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState<any>([]);
+  const [data, setData] = useState<DataType>([]);
 
   useEffect(() => {
     if (!user?.fullName) {
@@ -42,8 +44,8 @@ function Home() {
   };
 
   const onDelete = (id: string) => {
-    setData((currentData: any) =>
-      currentData.filter((item: any) => item.id !== id)
+    setData((currentData) =>
+      currentData.filter((item) => item.id !== id)
     );
     toast.success("Brewerie deleted successfully", {
       position: "top-right",
@@ -70,7 +72,7 @@ function Home() {
       <Header />
       <ToastContainer />
       <main className="home-content">
-        {data.map((brewerie: any) => (
+        {data.map((brewerie) => (
           <Card
             key={brewerie.id}
             name={brewerie.name}

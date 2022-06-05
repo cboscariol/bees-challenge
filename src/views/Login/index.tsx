@@ -1,4 +1,4 @@
-import { useState, ChangeEvent, useMemo, useCallback, useContext } from "react";
+import { useState, ChangeEvent, SyntheticEvent, useMemo, useCallback, useContext } from "react";
 import { UserContext } from "../../store/userContext";
 import { InputNameType } from "./interface";
 import { useNavigate } from "react-router-dom";
@@ -23,7 +23,7 @@ function Login() {
     return values.fullName.value && values.majorAge.value;
   }, [values]);
 
-  const handleSubmit = (event: any) => {
+  const handleSubmit = (event: SyntheticEvent<HTMLFormElement>) => {
     event.preventDefault();
     setUser({
       fullName: values.fullName.value,

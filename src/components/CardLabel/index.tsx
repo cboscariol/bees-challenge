@@ -1,7 +1,8 @@
-import "./style.css";
-import dashboardIcon from "./dashboardIcon.svg";
+import { CardLabelProps } from './interface';
 
-function CardLabel(props: any) {
+import "./style.css";
+
+function CardLabel(props: CardLabelProps) {
   return (
     <div className="card-label">
       <img src={props.icon} alt={props.title} />
