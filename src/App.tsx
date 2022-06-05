@@ -1,9 +1,9 @@
-import "./styles/global.css";
 import Login from "./views/Login";
-
 import UserProvider from "./store/userContext";
 import { Routes, Route } from "react-router-dom";
 import Home from "./views/Home";
+
+import "./styles/global.css";
 
 function App() {
   return (

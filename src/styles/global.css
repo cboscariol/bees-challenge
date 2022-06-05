@@ -1,18 +1,17 @@
 * {
-    font-family: 'Work Sans', sans-serif;
-    margin: 0;
-    padding: 0;
-    border: 0;
-    box-sizing: border-box;
+  font-family: 'Work Sans', sans-serif;
+  margin: 0;
+  padding: 0;
+  border: 0;
+  box-sizing: border-box;
+}
 
- }
-
- :root {
-    --primary-yellow: #F2EC54;
-    --primary-gray: #27272A;
-    --secondary-gray: #52525B;
-    --tertiary-gray: #3F3F46;
-    --primary-white: #E5E5E5;
-    --primary-blue: #5D5FEF;
-    --primary-red: #811414;
- }
+:root {
+  --primary-yellow: #F2EC54;
+  --primary-gray: #27272A;
+  --secondary-gray: #52525B;
+  --tertiary-gray: #3F3F46;
+  --primary-white: #E5E5E5;
+  --primary-blue: #5D5FEF;
+  --primary-red: #811414;
+}

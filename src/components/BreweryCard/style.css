@@ -1,4 +1,4 @@
-.card {
+.brewery-card {
   border: 1px solid #000000;
   border-radius: 4px;
   padding: 30.55px 23px 35px 23px;
@@ -7,7 +7,7 @@
   margin-bottom: 20px;
 }
 
-.card h1 {
+.brewery-card h1 {
   font-weight: 700;
   font-size: 20px;
   line-height: 150%;
@@ -15,28 +15,28 @@
   padding-bottom: 22.22px;
 }
 
-.card p {
+.brewery-card p {
   font-weight: 400;
   font-size: 16px;
   line-height: 26px;
   color: var(--tertiary-gray);
 }
 
-.card > button {
+.brewery-card > button {
   position: absolute;
   top: 14px;
   right: 15px;
   cursor: pointer;
 }
 
-.label-wrapper {
+.brewery-card-labels {
   display: flex;
   flex-wrap: wrap;
   padding-top: 26px;
 }
 
 @media (min-width: 769px) {
-  .card {
+  .brewery-card {
     margin-bottom: 0;
   }
 }
