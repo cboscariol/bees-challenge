@@ -1,20 +1,26 @@
 import './style.css'
 import trashIcon from './assets/trashIcon.svg'
+import dashboardIcon from './assets/dashboardIcon.svg'
+import locationIcon from './assets/locationIcon.svg'
+import phoneIcon from './assets/phoneIcon.svg'
+import addIcon from './assets/addIcon.svg'
 import CardLabel from '../CardLabel'
 
 
-function BreweryCard() {
+function BreweryCard(props: any) {
   return (
     <div className='card'>
       <button>
-        <img src={trashIcon} alt="delete" />
+        <img src={trashIcon} alt="delete" onClick={props.onDelete}/>
       </button>
-      <h1>10-56 Brewing Company</h1>
-      <p>street</p>
-      <p>city, state - country </p>
+      <h1>{props.name}</h1>
+      <p>s{props.street}</p>
+      <p>{props.city}, {props.state} - {props.country} </p>
       <div className='label-wrapper'>
-        <CardLabel title='micro'/> <CardLabel title='46534'/>
-        <CardLabel title='6308165790'/> <CardLabel title='add more'/>
+        <CardLabel title={props.breweryType} icon={dashboardIcon}/>
+        <CardLabel title={props.postalCode} icon={locationIcon}/>
+        <CardLabel title={props.phone} icon={phoneIcon}/>
+        <CardLabel title='add more' icon={addIcon}/>
       </div>
     </div>
   )

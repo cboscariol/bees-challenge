@@ -3,7 +3,6 @@
   border-radius: 4px;
   padding: 30.55px 23px 35px 23px;
   width: 382px;
-  height: 282px;
   position: relative;
   margin-bottom: 20px;
 }
@@ -27,6 +26,7 @@
   position: absolute;
   top: 14px;
   right: 15px;
+  cursor: pointer;
 }
 
 .label-wrapper {

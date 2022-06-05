@@ -1,12 +1,22 @@
-main {
+.home-content {
   padding: 22px;
+  justify-content: center;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.empty-data p {
+  text-align: center;
+}
+
+.empty-data img {
+  display: block;
+  margin: 0 auto;
 }
 
 @media (min-width: 769px) {
-  main {
+  .home-content {
     padding: 98px;
-    display: flex;
-    flex-wrap: wrap;
     gap: 48px
   }
 }
