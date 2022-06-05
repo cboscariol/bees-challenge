@@ -1,0 +1,13 @@
+.label {
+  background-color: var(--primary-yellow);
+  border-radius: 99px;
+  padding: 7px 11px;
+  width: fit-content;
+  display: flex;
+  min-width: 130px;
+  margin: 0 16px 28px 0;
+}
+
+.label img {
+  padding-right: 12px;
+}

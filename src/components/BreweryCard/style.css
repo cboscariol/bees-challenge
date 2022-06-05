@@ -4,8 +4,8 @@
   padding: 30.55px 23px 35px 23px;
   width: 382px;
   height: 282px;
-  margin-bottom: 30.55px;
   position: relative;
+  margin-bottom: 20px;
 }
 
 .card h1 {
@@ -29,8 +29,14 @@
   right: 15px;
 }
 
+.label-wrapper {
+  display: flex;
+  flex-wrap: wrap;
+  padding-top: 26px;
+}
+
 @media (min-width: 769px) {
   .card {
-    margin: 0 48px 48px 0;
+    margin-bottom: 0;
   }
 }

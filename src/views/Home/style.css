@@ -1,13 +1,12 @@
 main {
   padding: 22px;
-
 }
-
 
 @media (min-width: 769px) {
   main {
     padding: 98px;
     display: flex;
     flex-wrap: wrap;
+    gap: 48px
   }
 }
