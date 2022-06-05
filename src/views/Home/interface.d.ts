@@ -1,4 +1,4 @@
-export type DataType = {
+export type DataType = ({
   id: string
   name: string
   street: string
@@ -8,4 +8,4 @@ export type DataType = {
   brewery_type: string
   postal_code: string
   phone: string
-}[]
+} | any)[]

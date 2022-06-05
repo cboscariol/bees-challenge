@@ -13,8 +13,8 @@ import "./style.css";
 function Home() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
-  //const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState<DataType>([]);
+  const [isLoading, setIsLoading] = useState(false)
+  const [data, setData] = useState<DataType>([undefined, undefined]);
 
   useEffect(() => {
     if (!user?.fullName) {
@@ -24,28 +24,30 @@ function Home() {
     }
   }, []);
 
-  useEffect(() => {
-    console.log(data);
-  }, [data]);
-
   if (!user?.fullName) {
     return null;
   }
 
   const getBreweriesData = async () => {
-    //setIsLoading(true)
+    setIsLoading(true)
 
     try {
       const response = await fetch("https://api.openbrewerydb.org/breweries");
       setData(await response.json());
-    } catch (error) {
-      console.log(error);
+    } catch (error: any) {
+      toast.error(error.message, {
+        position: "top-right",
+        autoClose: 3000,
+        closeOnClick: true,
+      });
+    } finally {
+      setIsLoading(false);
     }
   };
 
   const onDelete = (id: string) => {
     setData((currentData) =>
-      currentData.filter((item) => item.id !== id)
+      currentData.filter((item) => item?.id !== id)
     );
     toast.success("Brewerie deleted successfully", {
       position: "top-right",
@@ -55,7 +57,7 @@ function Home() {
   };
 
   const renderEmptyData = () => {
-    if (!data.length) {
+    if (!data.length && !isLoading) {
       return (
         <div className="empty-data">
           <img src={beerMug} alt="beer-mug" />
@@ -74,16 +76,17 @@ function Home() {
       <main className="home-content">
         {data.map((brewerie) => (
           <Card
-            key={brewerie.id}
-            name={brewerie.name}
+            key={brewerie?.id}
+            name={brewerie?.name}
             street={brewerie?.street}
             city={brewerie?.city}
             state={brewerie?.state}
-            country={brewerie.country}
+            country={brewerie?.country}
             breweryType={brewerie?.brewery_type}
-            postalCode={brewerie.postal_code}
-            phone={brewerie.phone}
-            onDelete={() => onDelete(brewerie.id)}
+            postalCode={brewerie?.postal_code}
+            phone={brewerie?.phone}
+            loading={isLoading}
+            onDelete={() => onDelete(brewerie?.id)}
           />
         ))}
         {renderEmptyData()}

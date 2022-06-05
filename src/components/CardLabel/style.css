@@ -1,3 +1,11 @@
+@keyframes pulse {
+  0% {
+    opacity: .6; }
+  50% {
+    opacity: 1; }
+  100% {
+    opacity: .6; } }
+
 .card-label {
   background-color: var(--primary-yellow);
   border-radius: 99px;
@@ -11,3 +19,10 @@
 .card-label img {
   padding-right: 12px;
 }
+
+.card-label[data-loading=true] {
+  animation: pulse 1.5s infinite;
+}
+
+
+

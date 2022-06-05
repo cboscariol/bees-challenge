@@ -8,4 +8,5 @@ export type BreweryCardProps = {
   breweryType: string
   postalCode: string
   phone: string
+  loading?: boolean
 }
