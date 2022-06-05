@@ -5,15 +5,15 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 function Login() {
-const { setUser } = useContext(UserContext);
+const { user, setUser } = useContext(UserContext);
 let navigate = useNavigate();
   const [values, setValues] = useState({
     fullName: {
-      value: '',
+      value: user?.fullName ?? '',
       touched: false
     },
     majorAge: {
-      value: false,
+      value: user?.majorAge ?? false,
       touched: false
     }
   })
@@ -24,7 +24,7 @@ let navigate = useNavigate();
 
   const handleSubmit = (event: any) => {
     event.preventDefault();
-    setUser({ fullName: values.fullName.value })
+    setUser({ fullName: values.fullName.value, majorAge: values.majorAge.value })
     navigate("../home")
   }
 

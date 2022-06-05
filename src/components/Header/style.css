@@ -1,0 +1,27 @@
+header {
+  background-color: var(--primary-yellow);
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  font-size: 30px;
+}
+
+.action-box {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.action-box button {
+  background: none;
+  padding: 16.8px 19.8px;
+  cursor: pointer;
+}
+
+.action-box span {
+  padding-left: 20.8px;
+}
+
+.userFullName {
+  padding-right: 40px;
+}

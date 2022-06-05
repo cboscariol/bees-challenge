@@ -9,18 +9,16 @@ function Header() {
   const { user } = useContext(UserContext)
 
   const navigateBackHome = () => {
-    navigate("/")
+    navigate(-1)
   }
-
-
 
   return (
     <header>
-      <div>
-        <button><img src={backIcon} alt="go-back-button" onClick={navigateBackHome} /></button>
+      <div className='action-box' onClick={navigateBackHome}>
+        <button><img src={backIcon} alt="go-back-button"  /></button>
         <span>Go back</span>
       </div>
-        <span>{user?.fullName}</span>
+        <span className='userFullName'>{user?.fullName}</span>
     </header>
   )
 }

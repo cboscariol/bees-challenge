@@ -6,7 +6,8 @@ export type UserContextProps = {
 
 export type UserContextValue = {
   user?: {
-    fullName?: string
+    fullName?: string,
+    majorAge?: boolean
   },
   setUser?: Dispatch<SetStateAction<{}>>
 }
