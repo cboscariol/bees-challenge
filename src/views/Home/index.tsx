@@ -1,5 +1,6 @@
 import './style.css'
 import Header from '../../components/Header'
+import Card from '../../components/BreweryCard'
 import { useContext, useEffect } from 'react'
 import { UserContext } from '../../store/userContext'
 import { useNavigate } from "react-router-dom";
@@ -22,6 +23,12 @@ function Home() {
   return (
     <>
       <Header/>
+      <main>
+        <Card/>
+        <Card/>
+        <Card/>
+        <Card/>
+      </main>
     </>
   )
 }

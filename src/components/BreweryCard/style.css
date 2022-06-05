@@ -1,0 +1,36 @@
+.card {
+  border: 1px solid #000000;
+  border-radius: 4px;
+  padding: 30.55px 23px 35px 23px;
+  width: 382px;
+  height: 282px;
+  margin-bottom: 30.55px;
+  position: relative;
+}
+
+.card h1 {
+  font-weight: 700;
+  font-size: 20px;
+  line-height: 150%;
+  color: var(--primary-gray);
+  padding-bottom: 22.22px;
+}
+
+.card p {
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 26px;
+  color: var(--tertiary-gray);
+}
+
+.card > button {
+  position: absolute;
+  top: 14px;
+  right: 15px;
+}
+
+@media (min-width: 769px) {
+  .card {
+    margin: 0 48px 48px 0;
+  }
+}
