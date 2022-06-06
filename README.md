@@ -39,7 +39,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 | Features                      | Description      | 
 | -------------                 | ---------------- | 
 | Typescript                    |:heavy_check_mark: Interface/Types| 
-| Unit tests                    |:heavy_check_mark:|
+| Unit tests                    |:heavy_check_mark: Basic implementation|
 | State management              |:heavy_check_mark: ContextAPI| 
 | Add more feature              |:heavy_check_mark: Search by Brewery name + Toast Notification| 
 | Validate user input           |:heavy_check_mark:| 
