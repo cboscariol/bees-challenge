@@ -1,4 +1,6 @@
-# Getting Started with Create React App
+# BEES CHALLENGE
+
+This app is part of front-end interview challenge
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
@@ -19,28 +21,43 @@ You will also see any lint errors in the console.
 Launches the test runner in the interactive watch mode.\
 See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+## Requirements
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+### Base requirements
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+| Features                  | Description      | 
+| -------------             | ---------------- | 
+| HTML Markups              || 
+| Style                     |CSS|
+| React                     || 
+| Javascript best practices || 
+| Folder structure          |Packaged by components, store, globalStyles and views| 
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
-### `npm run eject`
+### Implemented bonus features
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+| Features                      | Description      | 
+| -------------                 | ---------------- | 
+| Typescript                    |:heavy_check_mark: Interface/Types| 
+| Unit tests                    |:heavy_check_mark:|
+| State management              |:heavy_check_mark: ContextAPI| 
+| Add more feature              |:heavy_check_mark: Search by Brewery name + Toast Notification| 
+| Validate user input           |:heavy_check_mark:| 
+| Loading, error and empty state|:heavy_check_mark:| 
+| Git commit history            |:heavy_check_mark:| 
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+### Libraries implemented
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+* "react-placeholder": "^4.1.0" - Loading
+* "react-router-dom": "^6.3.0" - Router
+* "react-toastify": "^9.0.3" - Notifications
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+### CSS variables 
 
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+* --primary-yellow: #F2EC54;
+* --primary-gray: #27272A;
+* --secondary-gray: #52525B;
+* --tertiary-gray: #3F3F46;
+* --primary-white: #E5E5E5;
+* --primary-blue: #5D5FEF;
+* --primary-red: #811414;
