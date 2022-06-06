@@ -1,0 +1,22 @@
+.search-field {
+  display: flex;
+  justify-content: flex-end;
+}
+
+.search-field-input {
+  max-width: 250px;
+  height: 30px;
+  position: absolute;
+  padding: 15px 32px 15px 10px;
+  margin-top: 20px;
+  margin-right: 22px;
+  border: 1px solid var(--secondary-gray);
+  border-radius: 4px;
+}
+
+.search-field-icon {
+  width: 10px;
+  position: relative;
+  top: 30px;
+  right: 35px;
+}

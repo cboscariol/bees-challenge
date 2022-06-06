@@ -1,6 +1,7 @@
 import Header from "../../components/Header";
 import Card from "../../components/BreweryCard";
-import { useContext, useEffect, useState } from "react";
+import SearchField from "../../components/SearchField";
+import { useContext, useEffect, useState, ChangeEvent } from "react";
 import { UserContext } from "../../store/userContext";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -14,7 +15,8 @@ function Home() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false)
-  const [data, setData] = useState<DataType>([undefined, undefined]);
+  const [initialData, setInitialData] = useState<DataType>([{}, {}]);
+  const [data, setData] = useState<DataType>(initialData);
 
   useEffect(() => {
     if (!user?.fullName) {
@@ -29,11 +31,13 @@ function Home() {
   }
 
   const getBreweriesData = async () => {
-    setIsLoading(true)
+    setIsLoading(true);
 
     try {
       const response = await fetch("https://api.openbrewerydb.org/breweries");
-      setData(await response.json());
+      const responseData = await response.json();
+      setData(responseData);
+      setInitialData(responseData);
     } catch (error: any) {
       toast.error(error.message, {
         position: "top-right",
@@ -45,7 +49,7 @@ function Home() {
     }
   };
 
-  const onDelete = (id: string) => {
+  const onDelete = (id?: string) => {
     setData((currentData) =>
       currentData.filter((item) => item?.id !== id)
     );
@@ -69,10 +73,17 @@ function Home() {
     }
   };
 
+  const handleChange = (value: string) => {
+    setData(
+      initialData.filter((item) => item?.name?.toLowerCase().includes(value.toLowerCase()))
+    );
+  };
+
   return (
     <>
       <Header />
       <ToastContainer />
+      <SearchField onChange={handleChange}/>
       <main className="home-content">
         {data.map((brewerie) => (
           <Card
