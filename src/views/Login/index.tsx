@@ -6,15 +6,15 @@ import { useNavigate } from "react-router-dom";
 import "./style.css";
 
 function Login() {
-  const { user, setUser } = useContext(UserContext);
+  const { setUser } = useContext(UserContext);
   const navigate = useNavigate();
   const [values, setValues] = useState({
     fullName: {
-      value: user?.fullName ?? "",
+      value: "",
       touched: false,
     },
     majorAge: {
-      value: user?.majorAge ?? false,
+      value: false,
       touched: false,
     },
   });

@@ -1,4 +1,5 @@
 export type BreweryCardProps = {
+  id?: string
   onDelete?: VoidFunction
   name?: string
   street?: string

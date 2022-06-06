@@ -31,10 +31,9 @@ function BreweryCard(props: BreweryCardProps) {
         </LoadingPlaceholder>
       </p>
       <div className="brewery-card-labels">
-        <CardLabel title={props.breweryType} icon={dashboardIcon} loading={props.loading} />
-        <CardLabel title={props.postalCode} icon={locationIcon} loading={props.loading} />
-        <CardLabel title={props.phone} icon={phoneIcon} loading={props.loading} />
-        <CardLabel title="add more" icon={addIcon} />
+        <CardLabel title={props.breweryType} icon={dashboardIcon} loading={props.loading} key={props.id}/>
+        <CardLabel title={props.postalCode} icon={locationIcon} loading={props.loading} key={props.id}/>
+        <CardLabel title={props.phone} icon={phoneIcon} loading={props.loading} key={props.id}/>
       </div>
     </div>
   );

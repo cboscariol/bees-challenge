@@ -9,7 +9,7 @@ function Header() {
   const { user } = useContext(UserContext);
 
   const navigateBackHome = () => {
-    navigate(-1);
+    navigate("/", {replace: true});
   };
 
   return (
