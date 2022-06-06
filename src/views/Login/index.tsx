@@ -1,4 +1,11 @@
-import { useState, ChangeEvent, SyntheticEvent, useMemo, useCallback, useContext } from "react";
+import {
+  useState,
+  ChangeEvent,
+  SyntheticEvent,
+  useMemo,
+  useCallback,
+  useContext,
+} from "react";
 import { UserContext } from "../../store/userContext";
 import { InputNameType } from "./interface";
 import { useNavigate } from "react-router-dom";
@@ -19,7 +26,8 @@ function Login() {
     },
   });
 
-  const canSubmit = useMemo(() => { //submit validation
+  const canSubmit = useMemo(() => {
+    //submit validation
     return values.fullName.value && values.majorAge.value;
   }, [values]);
 
@@ -36,7 +44,7 @@ function Login() {
     const name = event.target.name;
     const value =
       name === "fullName"
-        ? event.target.value.replace(/[^a-zA-Z]+/g, "") //Only alphabetical characters regex
+        ? event.target.value.replace(/[^a-zA-Z ]+/g, "") //Only alphabetical characters regex
         : event.target.checked;
     setValues({ ...values, [name]: { value, touched: true } });
   };
@@ -63,6 +71,9 @@ function Login() {
           <p>Only alphabetical characters are accepted</p>
         </div>
         <form className="login-form" onSubmit={handleSubmit} method="post">
+          {getHasError("fullName") && (
+            <p className="error">Please, fill this field!</p>
+          )}
           <input
             className="login-input"
             type="text"
@@ -72,9 +83,6 @@ function Login() {
             onChange={handleChange}
             onBlur={handleBlur}
           />
-          {getHasError("fullName") && (
-            <p className="error">Please, fill this field!</p>
-          )}
           <label htmlFor="age-checkbox">
             <input
               type="checkbox"

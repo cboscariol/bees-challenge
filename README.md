@@ -61,3 +61,7 @@ See the section about [running tests](https://facebook.github.io/create-react-ap
 * --primary-white: #E5E5E5;
 * --primary-blue: #5D5FEF;
 * --primary-red: #811414;
+
+### Responsive breakpoint
+
+* min-width: 769px
