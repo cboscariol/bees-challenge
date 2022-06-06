@@ -1,7 +1,7 @@
 import Header from "../../components/Header";
 import Card from "../../components/BreweryCard";
 import SearchField from "../../components/SearchField";
-import { useContext, useEffect, useState, ChangeEvent } from "react";
+import { useContext, useEffect, useState } from "react";
 import { UserContext } from "../../store/userContext";
 import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
@@ -15,10 +15,10 @@ function Home() {
   const navigate = useNavigate();
   const { user } = useContext(UserContext);
   const [isLoading, setIsLoading] = useState(false)
-  const [initialData, setInitialData] = useState<DataType>([{}, {}]);
+  const [initialData, setInitialData] = useState<DataType>([{ id: "1" }, { id: "2" }]);
   const [data, setData] = useState<DataType>(initialData);
 
-  useEffect(() => {
+  useEffect(() => { //auth - protect route
     if (!user?.fullName) {
       navigate("/", { replace: true });
     } else {
@@ -37,7 +37,7 @@ function Home() {
       const response = await fetch("https://api.openbrewerydb.org/breweries");
       const responseData = await response.json();
       setData(responseData);
-      setInitialData(responseData);
+      setInitialData(responseData); // setData twice, so we can filter/search without change the initial data array
     } catch (error: any) {
       toast.error(error.message, {
         position: "top-right",

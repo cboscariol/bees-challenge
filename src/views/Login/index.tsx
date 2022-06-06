@@ -19,7 +19,7 @@ function Login() {
     },
   });
 
-  const canSubmit = useMemo(() => {
+  const canSubmit = useMemo(() => { //submit validation
     return values.fullName.value && values.majorAge.value;
   }, [values]);
 
@@ -36,7 +36,7 @@ function Login() {
     const name = event.target.name;
     const value =
       name === "fullName"
-        ? event.target.value.replace(/[^a-zA-Z]+/g, "")
+        ? event.target.value.replace(/[^a-zA-Z]+/g, "") //Only alphabetical characters regex
         : event.target.checked;
     setValues({ ...values, [name]: { value, touched: true } });
   };
@@ -44,7 +44,7 @@ function Login() {
   const handleBlur = (event: ChangeEvent<HTMLInputElement>) => {
     const name = event.target.name as InputNameType;
     const value = values[name].value;
-    setValues({ ...values, [name]: { value, touched: true } });
+    setValues({ ...values, [name]: { value, touched: true } }); //touched to show errors only on blur
   };
 
   const getHasError = useCallback(

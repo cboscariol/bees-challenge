@@ -2,7 +2,6 @@ import trashIcon from "./assets/trashIcon.svg";
 import dashboardIcon from "./assets/dashboardIcon.svg";
 import locationIcon from "./assets/locationIcon.svg";
 import phoneIcon from "./assets/phoneIcon.svg";
-import addIcon from "./assets/addIcon.svg";
 import LoadingPlaceholder from "../LoadingPlaceholder";
 import CardLabel from "../CardLabel";
 import { BreweryCardProps } from './interface'
@@ -31,9 +30,9 @@ function BreweryCard(props: BreweryCardProps) {
         </LoadingPlaceholder>
       </p>
       <div className="brewery-card-labels">
-        <CardLabel title={props.breweryType} icon={dashboardIcon} loading={props.loading} key={props.id}/>
-        <CardLabel title={props.postalCode} icon={locationIcon} loading={props.loading} key={props.id}/>
-        <CardLabel title={props.phone} icon={phoneIcon} loading={props.loading} key={props.id}/>
+        <CardLabel title={props.breweryType} icon={dashboardIcon} loading={props.loading} />
+        <CardLabel title={props.postalCode} icon={locationIcon} loading={props.loading} />
+        <CardLabel title={props.phone} icon={phoneIcon} loading={props.loading} />
       </div>
     </div>
   );

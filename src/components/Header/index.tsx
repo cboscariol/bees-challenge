@@ -9,17 +9,15 @@ function Header() {
   const { user } = useContext(UserContext);
 
   const navigateBackHome = () => {
-    navigate("/", {replace: true});
+    navigate("/", {replace: true}); //replace true, so the user needs to login again
   };
 
   return (
     <header className="header">
-      <div className="header-action-box" onClick={navigateBackHome}>
-        <button>
+      <button className="header-action-box" onClick={navigateBackHome}>
           <img src={backIcon} alt="go-back-button" />
-        </button>
-        <span>Go back</span>
-      </div>
+        <span className="header-btn-text">Go back</span>
+      </button>
       <span className="header-user-name">{user?.fullName}</span>
     </header>
   );

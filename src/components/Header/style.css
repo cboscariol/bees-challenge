@@ -10,12 +10,11 @@
   display: flex;
   align-items: center;
   cursor: pointer;
+  background: none;
 }
 
-.header-action-box button {
-  background: none;
+.header-action-box img {
   padding: 16.8px 19.8px;
-  cursor: pointer;
 }
 
 .header-action-box span {
@@ -24,4 +23,10 @@
 
 .header-user-name {
   padding-right: 40px;
+}
+
+.header-btn-text {
+  font-weight: 400;
+  font-size: 30px;
+  line-height: 150%;
 }
